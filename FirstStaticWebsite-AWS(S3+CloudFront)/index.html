@@ -1,0 +1,230 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Learning Cloud with AWS</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#hero">
+        <svg class="brand-mark" width="34" height="34" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="1" y="1" width="22" height="22" rx="5" fill="#0ea5e9"></rect>
+          <path d="M6 15h12V9H6z" fill="white" opacity="0.95"></path>
+        </svg>
+        <span class="brand-text">Learning Cloud with AWS</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#what-cloud">What is Cloud?</a>
+        <a href="#s3">Amazon S3</a>
+        <a href="#cloudfront">CloudFront</a>
+        <a href="#deploy">Deploy Steps</a>
+      </nav>
+
+      <button class="menu-toggle" aria-expanded="false" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero" role="banner">
+      <div class="hero-bg"></div>
+      <div class="container hero-inner">
+        <div class="hero-content reveal">
+          <h1 class="hero-title">Learning Cloud with <span class="accent">AWS</span></h1>
+          <p class="hero-sub">A simple, modern guide to deploying static websites using Amazon S3 and CloudFront — designed for beginners.</p>
+          <div class="hero-cta">
+            <a class="btn primary" href="#deploy">Get Started</a>
+            <a class="btn ghost" href="#what-cloud">Why Cloud?</a>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <div class="card-header">
+            <strong>Quick Overview</strong>
+            <small>Static site workflow</small>
+          </div>
+          <ul class="mini-list">
+            <li>Author: Rajdeep</li>
+            <li>Recommended: S3 + CloudFront</li>
+            <li>Optimized for performance & cost</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT IS CLOUD -->
+    <section id="what-cloud" class="section">
+      <div class="container section-grid">
+        <div class="section-content reveal">
+          <h2>What is Cloud Computing?</h2>
+          <p class="muted">Cloud computing provides on-demand compute, storage, and networking resources over the internet so you can build, deploy, and scale applications without managing physical servers.</p>
+          <p>For static websites the cloud offers managed object storage (S3) and global delivery (CloudFront) — which makes hosting fast, secure, and inexpensive.</p>
+        </div>
+
+        <aside class="info-box reveal">
+          <h3>Benefits</h3>
+          <ul>
+            <li>Low maintenance</li>
+            <li>Scales automatically</li>
+            <li>Pay for what you use</li>
+            <li>Global delivery & caching</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- WHAT IS S3 -->
+    <section id="s3" class="section alt">
+      <div class="container section-inner">
+        <div class="reveal">
+          <h2>What is Amazon S3?</h2>
+          <p class="muted">Amazon Simple Storage Service (S3) is object storage built to store and retrieve any amount of data from anywhere. For static sites S3 can host your HTML, CSS, JS and assets directly.</p>
+        </div>
+
+        <div class="feature-cards">
+          <article class="feature reveal">
+            <h4>Static website hosting</h4>
+            <p>Configure a bucket to serve website content with public read access (or via CloudFront for security).</p>
+          </article>
+
+          <article class="feature reveal">
+            <h4>Durability</h4>
+            <p>Designed for 99.999999999% durability and versioning support to protect your files.</p>
+          </article>
+
+          <article class="feature reveal">
+            <h4>Lifecycle rules</h4>
+            <p>Automatically move or expire objects to manage cost and compliance at scale.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT IS CLOUDFRONT -->
+    <section id="cloudfront" class="section">
+      <div class="container">
+        <div class="reveal">
+          <h2>What is Amazon CloudFront?</h2>
+          <p class="muted">CloudFront is a Content Delivery Network (CDN) that caches content at edge locations around the world — speeding up delivery and reducing latency for end users.</p>
+        </div>
+
+        <div class="two-col reveal">
+          <div>
+            <h3>Why use CloudFront?</h3>
+            <ul>
+              <li>Fast global distribution</li>
+              <li>TLS & HTTPS support</li>
+              <li>Custom domains & edge caching rules</li>
+              <li>Integrates with S3, Lambda@Edge, and WAF</li>
+            </ul>
+          </div>
+          <div class="diagram-card">
+            <h3>Architecture (UI placeholder)</h3>
+            <!-- Simple architecture diagram placeholder (UI only) -->
+            <svg class="arch" viewBox="0 0 800 240" role="img" aria-label="Architecture diagram">
+              <defs>
+                <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#0369a1"></path>
+                </marker>
+              </defs>
+
+              <!-- Client -->
+              <rect x="18" y="90" width="140" height="60" rx="10" fill="#e6f7ff"></rect>
+              <text x="88" y="128" text-anchor="middle" fill="#003d4d" font-weight="600">Users</text>
+
+              <!-- CDN -->
+              <rect x="260" y="30" width="160" height="60" rx="10" fill="#dbeffd"></rect>
+              <text x="340" y="68" text-anchor="middle" fill="#003d4d" font-weight="600">CloudFront</text>
+
+              <!-- S3 -->
+              <rect x="540" y="90" width="160" height="60" rx="10" fill="#dbeffd"></rect>
+              <text x="620" y="128" text-anchor="middle" fill="#003d4d" font-weight="600">Amazon S3</text>
+
+              <!-- Arrows -->
+              <path d="M158 120 L260 60" stroke="#0369a1" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+              <path d="M420 90 L540 120" stroke="#0369a1" stroke-width="4" fill="none" marker-end="url(#arrow)"></path>
+
+              <!-- Notes -->
+              <text x="340" y="18" text-anchor="middle" fill="#075985" font-size="12">Edge caching & TLS</text>
+              <text x="620" y="170" text-anchor="middle" fill="#075985" font-size="12">Origin storage for static assets</text>
+            </svg>
+            <p class="diagram-note muted">This is a visual placeholder. Replace with your final diagram as needed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPLOY STEPS -->
+    <section id="deploy" class="section alt">
+      <div class="container">
+        <div class="reveal">
+          <h2>Steps to deploy a static website</h2>
+          <p class="muted">UI-only checklist: follow each step in the AWS Console or CLI to deploy your site.</p>
+        </div>
+
+        <ol class="steps-list reveal">
+          <li>
+            <strong>Create an S3 bucket</strong>
+            <p>Choose a unique name and region. Enable static website hosting or keep private if using CloudFront.</p>
+          </li>
+          <li>
+            <strong>Upload your site files</strong>
+            <p>Add HTML, CSS, JS, and images. Set object metadata (content-type) correctly.</p>
+          </li>
+          <li>
+            <strong>Set permissions</strong>
+            <p>Use CloudFront in front of S3 for secure access or configure bucket policy for public reads (not recommended for production).</p>
+          </li>
+          <li>
+            <strong>Create CloudFront distribution</strong>
+            <p>Choose your S3 bucket as the origin, enable TLS, set cache behaviors and default root object.</p>
+          </li>
+          <li>
+            <strong>Point domain & configure HTTPS</strong>
+            <p>Use Route 53 or your DNS provider; use ACM (AWS Certificate Manager) for TLS with CloudFront.</p>
+          </li>
+          <li>
+            <strong>Test & invalidate cache</strong>
+            <p>Ensure content serves correctly from edges. Use invalidation when you need immediate updates.</p>
+          </li>
+        </ol>
+
+        <div class="try-card reveal">
+          <h3>Checklist</h3>
+          <div class="checklist">
+            <label><input type="checkbox" /> Files uploaded to S3</label>
+            <label><input type="checkbox" /> CloudFront distribution created</label>
+            <label><input type="checkbox" /> Domain & TLS configured</label>
+            <label><input type="checkbox" /> Tested in multiple regions</label>
+          </div>
+          <p class="muted small">This UI is static — perform actual steps in the AWS Console or via the AWS CLI / CDK.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Created by Rajdeep</p>
+      <div class="socials" aria-hidden="true">
+        <!-- decorative -->
+        <span>🌐</span>
+        <span>⚡</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
